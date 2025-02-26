@@ -15,8 +15,9 @@ from . import status
 class StatusService(Service):
     def __init__(self, **kwargs):
         super().__init__("StatusService", **kwargs)
+        check_interval = self.config.get('check_interval', 5)
         self.status_list = [status.BatteryStatus(self), ]
-        self.add_timer("check_timer", 1, self.check_status)
+        self.add_timer("check_timer", check_interval, self.check_status)
 
     async def check_status(self):
         for status_checker in self.status_list:
