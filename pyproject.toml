@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "liteboty-sg-status-service"
+version = "0.1.0a1"
+description = ""
+authors = ["yejue <1145331931@qq.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+liteboty = ">=0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
