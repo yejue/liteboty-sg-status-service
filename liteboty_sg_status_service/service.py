@@ -19,6 +19,8 @@ class StatusService(Service):
         self.status_list = [status.BatteryStatus(self), ]
         self.add_timer("check_timer", check_interval, self.check_status)
 
+        self.tts_channel = self.config.get("outputs", {}).get("tts_channel", "/tts")
+
     async def check_status(self):
         for status_checker in self.status_list:
             checker = status_checker
@@ -31,5 +33,5 @@ class StatusService(Service):
                 }
                 self.logger.info(f"【StatusService】 {checker.notification_text}")
                 checker.reset_notification()
-                await self.publish(channel="/tts", data=tts_dict, msg_type=MessageType.JSON)
+                await self.publish(channel=self.tts_channel, data=tts_dict, msg_type=MessageType.JSON)
 
