@@ -1,0 +1,23 @@
+{
+    "origin_name": "liteboty_sg_status_service",
+    "display_name": {
+        "zh": "设备状态检测和提示服务",
+        "en": "Device Status Detection and Prompt Service"
+    },
+    "description": {
+        "zh": "",
+        "en": ""
+    },
+    "config_template": {
+        "outputs": {
+            "tts_channel": "/tts"
+        }
+    },
+    "minimal_config": {},
+    "recommended_config": {
+        "outputs": {
+            "tts_channel": "/tts"
+        }
+    },
+    "tags": []
+}
