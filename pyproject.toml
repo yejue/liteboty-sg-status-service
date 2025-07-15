@@ -4,6 +4,7 @@ version = "0.3.0a2"
 description = ""
 authors = ["yejue <1145331931@qq.com>"]
 readme = "README.md"
+include = ["service_info.json"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
